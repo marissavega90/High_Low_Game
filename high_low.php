@@ -10,14 +10,28 @@ do {
 
     fwrite(STDOUT, 'Guess? ');
 
-    $guess = fgets(STDIN);
+    $guess = trim(fgets(STDIN));
 
-        if ($guess > $number) {
+    //var_dump($guess);
+
+        if (is_numeric($guess)) {
+
+            if ($guess > $number) {
             echo "LOWER \n";
+            }
+
+            elseif ($guess < $number) {
+            echo "HIGHER \n";
+            }
+        
         }
 
-        elseif ($guess < $number) {
-            echo "HIGHER \n";
+        else {
+
+            while (1 == 1) {
+                echo "NOT A NUMBER!";
+            }
+
         }
 
     $counter++;
